@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drishti OSINT Framework</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="container">
+        <header>
+            <h1><span class="highlight">Drishti</span> OSINT</h1>
+            <p class="subtitle">Advanced Attack Surface Mapper</p>
+        </header>
+
+        <section class="scanner-panel glass-panel">
+            <form id="scanForm">
+                <div class="input-group">
+                    <input type="text" id="targetInput" placeholder="Enter Domain or IP (e.g., example.com or 8.8.8.8)" required>
+                    <button type="submit" id="scanBtn">
+                        <span class="btn-text">Initiate Scan</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                </div>
+                
+                <div class="options-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="shodanCheck" value="infrastructure">
+                        <span class="checkmark"></span>
+                        Infrastructure (Shodan, Censys, ZoomEye)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="crtshCheck" value="crtsh" checked>
+                        <span class="checkmark"></span>
+                        crt.sh (Subdomains)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="dorkCheck" value="dork" checked>
+                        <span class="checkmark"></span>
+                        Google Dorking (Leaks)
+                    </label>
+                </div>
+                <div id="errorMsg" class="error-msg hidden"></div>
+            </form>
+        </section>
+
+        <section id="resultsSection" class="results-section hidden">
+            <div class="risk-dashboard glass-panel">
+                <h2>Risk Score Summary</h2>
+                <div class="risk-cards">
+                    <div class="risk-card critical">
+                        <h3>Critical</h3>
+                        <p id="criticalCount">0</p>
+                    </div>
+                    <div class="risk-card high">
+                        <h3>High</h3>
+                        <p id="highCount">0</p>
+                    </div>
+                    <div class="risk-card medium">
+                        <h3>Medium</h3>
+                        <p id="mediumCount">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pluginResults" class="plugin-results">
+                <!-- Plugin result cards will be injected here by JS -->
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

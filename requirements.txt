@@ -1,0 +1,12 @@
+aiohttp
+beautifulsoup4
+dnspython
+duckduckgo-search
+fake-useragent
+fastapi
+googlesearch-python
+python-dotenv
+python-nmap
+requests
+shodan
+uvicorn
