@@ -30,7 +30,7 @@ Forensic Persistence & Diffing: Results are stored in a local SQLite database wi
 📦 Installation
 1. Clone the Repository
 ```bash
-git clone [https://github.com/YOUR_USERNAME/drishti-osint.git](https://github.com/YOUR_USERNAME/drishti-osint.git)
+git clone [https://github.com/aryancodesit/drishti-osint.git](https://github.com/aryancodesit/drishti-osint.git)
 cd drishti-osint
 ```
 
